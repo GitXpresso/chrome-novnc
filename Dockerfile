@@ -1,6 +1,6 @@
-FROM alpine:3.19.1
+FROM ubuntu:24.04
 
-LABEL AboutImage "Alpine_Chromium_NoVNC"
+LABEL AboutImage "NoVNC"
 
 LABEL Maintainer "Apurv Vyavahare <apurvvyavahare@gmail.com>"
 
