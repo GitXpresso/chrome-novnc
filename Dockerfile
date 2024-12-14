@@ -1,4 +1,4 @@
-FROM alpine:3.19.1
+FROM ubuntu:24.04
 
 LABEL AboutImage "Alpine_Chromium_NoVNC"
 
