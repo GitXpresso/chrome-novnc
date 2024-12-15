@@ -1,10 +1,35 @@
 FROM ubuntu:24.04
 FROM jlesage/baseimage-gui:ubuntu-22.04-v4 AS builder
+FROM jlesage/baseimage-gui:ubuntu-24.04-v4.6.7
+FROM alpine:3.14
 
-ARG LOCALE="en-US"
+
+RUN apk --no-cache add build-base linux-head
+RUN \
+    add-pkg \
+        # WebGL support.
+        mesa-dri-gallium \
+        # Audio support.
+        libpulse \
+        # Icons used by folder/file selection window (when saving as).
+        adwaita-icon-theme \
+        # A font is needed.
+        font-dejavu \
+        # The following package is used to send key presses to the X process.
+        xdotool \
+        && \
+    # Remove unneeded icons.
+    find /usr/share/icons/Adwaita -type d -mindepth 1 -maxdepth 1 -not -name 16x16 -not -name scalable -exec rm -rf {} ';' && \
+    true
 
 
-ENV WATERFOX_ICON_URL="https://raw.githubusercontent.com/DomiStyle/docker-tor-browser/master/icon.png"
+# Generate and install favicons.
+ARG LOCALE="en-US"RUN \
+    
+
+
+
+WATERFOX_ICON_URL="https://github.com/GitXpresso/docker-waterfox/blob/master/waterfox-icon.png"
 RUN install_app_icon.sh "${WATERFOX_ICON_URL}"
 
 ### Final image
