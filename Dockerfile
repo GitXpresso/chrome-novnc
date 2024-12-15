@@ -28,8 +28,7 @@ ARG LOCALE="en-US"RUN \
     
 
 
-
-WATERFOX_ICON_URL="https://github.com/GitXpresso/docker-waterfox/blob/master/waterfox-icon.png"
+ENV WATERFOX_ICON_URL="https://github.com/GitXpresso/docker-waterfox/blob/master/waterfox-icon.png"
 RUN install_app_icon.sh "${WATERFOX_ICON_URL}"
 
 ### Final image
