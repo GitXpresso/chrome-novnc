@@ -1,14 +1,14 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "Waterfox",
+    "short_name": "wfox",
     "icons": [
         {
-            "src": "images/icons/android-chrome-192x192.png?v=b1dae64d0f",
-            "sizes": "192x192",
+            "src": "images/icons/default128.png?v=b1dae64d0f",
+            "sizes": "128x128",
             "type": "image/png"
         },
         {
-            "src": "images/icons/android-chrome-256x256.png?v=b1dae64d0f",
+            "src": "images/icons/default256.png?v=b1dae64d0f",
             "sizes": "256x256",
             "type": "image/png"
         }
